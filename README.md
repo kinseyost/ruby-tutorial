@@ -2,7 +2,12 @@
 
 This is a working tutorial for setting up your first Ruby App.
 
-## Install latest version of ruby
+## Necessary ingrediants
+* Ruby
+* Bundler
+* mySql
+
+### Install Ruby
 I am using [rbenv](https://github.com/rbenv/rbenv) and [ruby-build](https://github.com/rbenv/ruby-build).  Others may use [rvm](https://rvm.io/) or some other Ruby version manager.
 
 To get these tools, I'm using [homebrew](http://brew.sh/)
@@ -37,10 +42,31 @@ rbenv global 2.3.1
 ### Install Rails and Bundler
 [Bundler](http://bundler.io/) is the best way to manage your Gemfile
 ```
-gem install bunder
+gem install bundler
 ```
 
 You probably don't need docs cause they're much better online.
 ```
 gem install rails --no-ri --no-rdoc
+```
+
+### Install MySQL
+Again, I'm using [homebrew](http://brew.sh/)
+```
+brew install mysql
+```
+
+#### Make sure you run mysql before starting the app
+```
+mysql.server start
+```
+
+## Install the gems
+```
+bundle install
+```
+
+## Run the demo app
+```
+rails server
 ```
