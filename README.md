@@ -70,3 +70,16 @@ bundle install
 ```
 rails server
 ```
+
+## rails Generate
+One of the most powerful features of Rails is the ability to generate scaffolding.
+
+To see what kind of generation you can perform
+```
+rails generate
+```
+
+### Generate new controller/views
+```
+rails generate controller <controllerName> <viewName>
+```
