@@ -8,4 +8,10 @@ class DemoController < ApplicationController
   def somethingRandom
     render('index')
   end
+  def other_hello
+    redirect_to(:controller => 'demo', :action => 'index')
+  end
+  def kinseyost
+    redirect_to('https://github.com/kinseyost')
+  end
 end
