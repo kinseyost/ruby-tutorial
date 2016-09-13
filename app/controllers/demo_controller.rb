@@ -7,6 +7,11 @@ class DemoController < ApplicationController
     render(:template => 'demo/hello')
   end
   def somethingRandom
+    @actionName = 'actionName'
+    render('index')
+  end
+  def actionName
+    @actionName = 'somethingRandom'
     render('index')
   end
   def other_hello
