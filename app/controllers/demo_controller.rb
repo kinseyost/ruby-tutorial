@@ -3,7 +3,13 @@ class DemoController < ApplicationController
   layout false
 
   def index
+    render(:template => 'demo/index')
+  end
+  def hello
     @array = [1, 2, 3, 4, 5]
+    @id = params['id']
+    @name = params['name']
+    @page = params['page']
     render(:template => 'demo/hello')
   end
   def somethingRandom

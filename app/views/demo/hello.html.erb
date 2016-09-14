@@ -8,12 +8,20 @@
 <br/>
 <% target = "Kinsey" %>
 <%= "Hello, my name is #{target}" %>
+
 <% 2.times do %>
 <%= "xxx" %>
-<% end %>
+<% end %><br/>
 
 <% @array.each do |n| %>
   <%= n %>
-<% end %>
+<% end %><br/>
 
-<%= link_to('Ruby Link', {:action => 'somethingRandom'}) %>
+<%= link_to('Ruby Link', {:action => 'somethingRandom'}) %><br/>
+
+id from params: <%= params['id'] %><br/>
+id from @instance: <%= @id %><br/>
+name: <%= @name %><br/>
+page: <%= @page %><br/>
+next page: <%= @page.to_i + 1 %><br/>
+Inspect Params <%= params.inspect %>
