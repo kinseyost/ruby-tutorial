@@ -71,6 +71,9 @@ bundle install
 rails server
 ```
 
+## Navigating this tutorial
+[Each of the commits](https://github.com/kinseyost/ruby-tutorial/commits/master) represent a lesson, to follow along go through each of the commits to see what the lesson entails.  Most of them are explained pretty well through the commit message.
+
 ## rails Generate
 One of the most powerful features of Rails is the ability to generate scaffolding.
 
@@ -82,4 +85,29 @@ rails generate
 ### Generate new controller/views
 ```
 rails generate controller <controllerName> <viewName>
+```
+
+## Database
+Create a database in mysql
+1. Login
+```
+mysql -u root
+```
+2. Create database
+```
+CREATE simple_cms_development;
+```
+3. Create a new user and password so you don't have to use *root* for everything.
+```
+GRANT ALL PRIVILEGES ON simple_cms_development.*
+TO 'whateverUsernameYouDesire'@'localhost'
+IDENTIFIED BY 'whateverPasswordYouDesire';
+```
+You can now check the privileges of that user.
+```
+SHOW GRANTS FOR whateverUsernameYouDesire@localhost;
+```
+4. Exit the application and sign in with new user and connect to simple_cms_development database.
+```
+mysql -u whateverUsernameYouDesire -p simple_cms_development
 ```
