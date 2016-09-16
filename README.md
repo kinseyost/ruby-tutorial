@@ -126,3 +126,20 @@ Even if you don't have any tables, this command can be used to ensure the databa
 ```
 rake db:schema:dump
 ```
+
+## Working with rake
+Rake helps perform tasks by running scripts.
+You can use it to perform many types of tasks by through rails, as well as add your own custom scripts by adding new ones to /Rakefile.
+To see what kind commands are available in the root of your application types
+```
+rake -T
+```
+To drill down into rake db tasks,
+```
+rake -t db
+```
+You can also add an environmental variable to the rake command to specify certain conditions.
+The most common one being `RAILS_ENV=production`
+```
+rake db:schema:dump RAILS_ENV=production'
+```
