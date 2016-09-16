@@ -99,6 +99,10 @@ CREATE simple_cms_development;
 ```
 3. Create a new user and password so you don't have to use *root* for everything.
 ```
+CREATE USER 'whateverUsernameYouDesire'@'localhost';
+```
+Give permissions to user.
+```
 GRANT ALL PRIVILEGES ON simple_cms_development.*
 TO 'whateverUsernameYouDesire'@'localhost'
 IDENTIFIED BY 'whateverPasswordYouDesire';
