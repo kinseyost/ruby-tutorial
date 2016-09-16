@@ -72,7 +72,7 @@ rails server
 ```
 
 ## Navigating this tutorial
-[Each of the commits](https://github.com/kinseyost/ruby-tutorial/commits/master) represent a lesson, to follow along go through each of the commits to see what the lesson entails.  Most of them are explained pretty well through the commit message.
+[Most of the commits](https://github.com/kinseyost/ruby-tutorial/commits/master) represent a lesson, to follow along go through each of the commits to see what the lesson entails.  Most of them are explained pretty well through the commit message.
 
 ## rails Generate
 One of the most powerful features of Rails is the ability to generate scaffolding.
@@ -97,7 +97,11 @@ mysql -u root
 ```
 CREATE simple_cms_development;
 ```
-3. Create a new user and password so you don't have to use *root* for everything.
+3. Switch to new database
+```
+USE simple_cms_development;
+```
+4. Create a new user and password so you don't have to use *root* for everything.
 ```
 CREATE USER 'whateverUsernameYouDesire'@'localhost';
 ```
@@ -111,7 +115,14 @@ You can now check the privileges of that user.
 ```
 SHOW GRANTS FOR whateverUsernameYouDesire@localhost;
 ```
-4. Exit the application and sign in with new user and connect to simple_cms_development database.
+5. Exit the application and sign in with new user and connect to simple_cms_development database.
 ```
 mysql -u whateverUsernameYouDesire -p simple_cms_development
+```
+
+## Creating db schema dump
+This will create a schema dump file: 'db/schema.rb'
+Even if you don't have any tables, this command can be used to ensure the database configuration in database.yml is correct.  If not, it will throw an error.
+```
+rake db:schema:dump
 ```
