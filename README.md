@@ -70,6 +70,10 @@ bundle install
 ```
 rails server
 ```
+Or in cloud9
+```
+rails s -b $IP -p $PORT -e c9development
+```
 
 ## Navigating this tutorial
 [Most of the commits](https://github.com/kinseyost/ruby-tutorial/commits/master) represent a lesson, to follow along go through each of the commits to see what the lesson entails.  Most of them are explained pretty well through the commit message.
