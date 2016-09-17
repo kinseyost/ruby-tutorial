@@ -73,7 +73,7 @@ rails server
 ```
 Or in cloud9
 ```
-rails s -b $IP -p $PORT -e c9development
+rails s -b $IP -p $PORT -e c9
 ```
 
 ## Navigating this tutorial
@@ -150,7 +150,7 @@ rake db:schema:dump RAILS_ENV=production'
 ```
 or for cloud9, 
 ```
-rake db:schema:dump RAILS_ENV=c9development'
+rake db:schema:dump RAILS_ENV=c9'
 ```
 
 ## Migrations
@@ -167,7 +167,31 @@ rails generate model ModelName
 ```
 
 #### Running our migrations
+*For any of the `rake` commands in cloud9, append `RAILS_ENV=c9`.*
+Rake will create the tables we have specified in our migration files, and add entries for each of the migrations keyed by their timestamp.
 ```
-rake db:migrate RAILS_ENV=c9development
+rake db:migrate
 ```
 
+View the migrations in the database under the schema_migrations table.
+``` sql
+SELECT * FROM schema_migrations;
+```
+
+#### Taking down migrations
+This will take down all of your migrations.
+```
+rake db:migrate VERSION=0
+```
+#### Get the status of the migrations
+To see if migrations are up or down
+```
+rake db:migrate:status 
+```
+
+#### VERSIONs
+You can go through the migrations sequentially by using VERSION=<timestamp> of whatever version.
+So if you only wanted to run the Create users migration, you'd enter
+```
+rake db:migrate VERSION=20160917170621
+```

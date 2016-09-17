@@ -21,7 +21,7 @@ development:
   <<: *default
   database: simple_cms_development
   
-c9development:
+c9:
   <<: *default
   adapter: mysql2
   encoding: utf8
