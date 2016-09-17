@@ -51,7 +51,8 @@ gem install rails --no-ri --no-rdoc
 ```
 
 ### Install MySQL
-Again, I'm using [homebrew](http://brew.sh/)
+Using cloud9 Follow [this guide](https://community.c9.io/t/setting-up-mysql/1718)
+On Mac, I'm using [homebrew](http://brew.sh/)
 ```
 brew install mysql
 ```
@@ -91,7 +92,7 @@ rails generate
 rails generate controller <controllerName> <viewName>
 ```
 
-## Database
+## Database Initialization
 Create a database in mysql
 1. Login
 ```
@@ -147,3 +148,26 @@ The most common one being `RAILS_ENV=production`
 ```
 rake db:schema:dump RAILS_ENV=production'
 ```
+or for cloud9, 
+```
+rake db:schema:dump RAILS_ENV=c9development'
+```
+
+## Migrations
+Migrations are Ruby's way of interacting with the database schema using Ruby code.
+### Generate Migrations
+```
+rails generate migration MyMigrationName
+```
+### Generate Model
+Generating a model will also generate an associated migration. 
+In this case the associated migration would be named with the timestamp and then _create_model_names.rb
+```
+rails generate model ModelName
+```
+
+#### Running our migrations
+```
+rake db:migrate RAILS_ENV=c9development
+```
+
