@@ -4,7 +4,7 @@ class AlterUsers < ActiveRecord::Migration[5.0]
     rename_table("users", "admin_users")
     add_column("admin_users", "username", :string, :limit => 25, :after => "email")
     change_column("admin_users", "email", :string, :limit => 100)
-    rename_column("admin_users", "breakit", "hashed_password")
+    rename_column("admin_users", "password", "hashed_password")
     puts("Always add an index for foreign keys and columns that are used frequently!")
     add_index("admin_users", "username")
   end
