@@ -195,3 +195,15 @@ So if you only wanted to run the Create users migration, you'd enter
 ```
 rake db:migrate VERSION=20160917170621
 ```
+
+## Rails Console
+From the root of your application, you can perform tasks using your application 
+to models and the database through `rails console`
+```
+rails console 
+```
+To specify enironment:
+```
+rails console c9
+```
+For more info, check out [Rails Console]('./Tutorial_Docs/Rails_Console.MD'). 
