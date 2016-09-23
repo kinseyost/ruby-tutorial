@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20160920033121) do
 
-  create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name",      limit: 25
     t.string   "last_name",       limit: 50
     t.string   "email",           limit: 100, default: "", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160920033121) do
     t.index ["username"], name: "index_admin_users_on_username", using: :btree
   end
 
-  create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "subject_id"
     t.string   "name"
     t.string   "permalink"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160920033121) do
     t.index ["subject_id"], name: "index_pages_on_subject_id", using: :btree
   end
 
-  create_table "sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "page_id"
     t.string   "name"
     t.integer  "position"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20160920033121) do
     t.index ["page_id"], name: "index_sections_on_page_id", using: :btree
   end
 
-  create_table "subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "position"
     t.boolean  "visible",    default: false
