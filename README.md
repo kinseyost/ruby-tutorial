@@ -116,6 +116,14 @@ GRANT ALL PRIVILEGES ON simple_cms_development.*
 TO 'whateverUsernameYouDesire'@'localhost'
 IDENTIFIED BY 'whateverPasswordYouDesire';
 ```
+
+To grant permissions to everything user
+```
+GRANT ALL PRIVILEGES ON *.*
+TO 'whateverUsernameYouDesire'@'localhost'
+IDENTIFIED BY 'whateverPasswordYouDesire';
+```
+
 You can now check the privileges of that user.
 ```
 SHOW GRANTS FOR whateverUsernameYouDesire@localhost;
@@ -148,7 +156,7 @@ The most common one being `RAILS_ENV=production`
 ```
 rake db:schema:dump RAILS_ENV=production'
 ```
-or for cloud9, 
+or for cloud9,
 ```
 rake db:schema:dump RAILS_ENV=c9'
 ```
@@ -160,7 +168,7 @@ Migrations are Ruby's way of interacting with the database schema using Ruby cod
 rails generate migration MyMigrationName
 ```
 ### Generate Model
-Generating a model will also generate an associated migration. 
+Generating a model will also generate an associated migration.
 In this case the associated migration would be named with the timestamp and then _create_model_names.rb
 ```
 rails generate model ModelName
@@ -186,7 +194,7 @@ rake db:migrate VERSION=0
 #### Get the status of the migrations
 To see if migrations are up or down
 ```
-rake db:migrate:status 
+rake db:migrate:status
 ```
 
 #### VERSIONs
@@ -197,13 +205,13 @@ rake db:migrate VERSION=20160917170621
 ```
 
 ## Rails Console
-From the root of your application, you can perform tasks using your application 
+From the root of your application, you can perform tasks using your application
 to models and the database through `rails console`
 ```
-rails console 
+rails console
 ```
 To specify enironment:
 ```
 rails console c9
 ```
-For more info, check out [Rails Console]('./Tutorial_Docs/Rails_Console.MD'). 
+For more info, check out [Rails Console]('./Tutorial_Docs/Rails_Console.MD').
