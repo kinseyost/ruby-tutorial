@@ -1,7 +1,7 @@
 class Subject < ApplicationRecord
 
   # Relations
-  has_one :page # Doesn't actually have 1, but showing for demonstration purposes
+  has_many :pages
 
   # Lamda is read at execution time, which is important for dates.
   scope :visible, lambda { where(:visible => true) }
