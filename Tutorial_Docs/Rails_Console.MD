@@ -4,7 +4,7 @@ Create new records in the db, and play with models using irb.
 ## Start Rails Console
 From root of application
 ```
-rails console 
+rails console
 ```
 You may need to specify the environment (this will select the database you are working with)
 ```
@@ -26,7 +26,7 @@ You can also create a new record with values filled in during creation
 subject = Subject.new(:name => "Subject 1", :position => 1, :visible => true)
 ```
 
-To save the record, 
+To save the record,
 ```
 subject.save
 ```
@@ -115,7 +115,7 @@ Subject.where(:visible => true).order("position ASC")
 ```
 
 Condition types to be included in where()
-`where` method 
+`where` method
 1. Hash as seen above ... `Subject.where(:visible => true)`
  - Does not support OR, LIKE, < or >
  - Only supports equality, range, and subset checking
@@ -123,14 +123,14 @@ Condition types to be included in where()
 3. Array (rails can render out any SQL injection before executing, rendering them harmless).
  - `Subject.where(["name = ? visible = true", "First Subject"])`
  - "`First Subject` replaces `?`"
- 
+
 This method is stringable, so you can have multiple `where` methods added to a query...
 ```
 Subject.where(:name => "kinsey").where(["name = ?"], "kinsey").first
 ```
 
 ### ORDER
-You can order by any column; alphabetically, chronologically, ascending 
+You can order by any column; alphabetically, chronologically, ascending
 * Should specify` table_name` and `column_name`
 * ASC
 * DESC
@@ -145,4 +145,18 @@ Where to start when limiting results
 
 ```
 subject = Subject.where(:visible => true).order("subjects.position ASC").limit(20).offset(40)
+```
+
+## Using named scopes in Rails Console
+You can declare named scopes in you [model]('../app/models/subject.rb'), and then run them in the rails console.
+* You must restart rails console after added a named scope.
+
+### Usage:
+In rails console
+```
+Subject.visible
+```
+
+```
+Subject.search("Third")
 ```
