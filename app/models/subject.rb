@@ -1,5 +1,8 @@
 class Subject < ApplicationRecord
 
+  # Relations
+  has_one :page # Doesn't actually have 1, but showing for demonstration purposes
+
   # Lamda is read at execution time, which is important for dates.
   scope :visible, lambda { where(:visible => true) }
   # Stabby lambda syntax is subtly different, but can also be used.
