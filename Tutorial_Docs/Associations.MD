@@ -45,6 +45,13 @@ You would then access the methods added to the model in rails console via
 pages.editors
 ```
 
+### foreign_key
+If your foreign key is something other than the associated class_name, you must specify a different foreign key
+```
+belongs_to :editor, :class_name => "AdminUser", :foreign_key => "admin_user_id" # because foreign key is not called editor_id
+
+```
+
 ## Defining editors on pages
 In rails console, create a new user
 ```
@@ -59,4 +66,19 @@ page = Page.find(2)
 Associate the new user to the page
 ```
 page.editors << me
+```
+
+
+## Rich Many-to-many
+Create new model for rich join table
+```
+rails generate model SectionEdit
+```
+
+Adding join between tables
+```
+edit = SectionEdit.new
+```
+```
+edit.summary = "Edited some content"
 ```
