@@ -82,3 +82,26 @@ edit = SectionEdit.new
 ```
 edit.summary = "Edited some content"
 ```
+
+```
+me = AdminUser.find(1)
+```
+
+```
+section = Section.find(1)
+```
+
+```
+section.section_edits << edit
+```
+
+```
+me.section_edits << edit
+```
+
+### Reloading from DB
+Sometimes your, especially if you use `edit.section = section` emphasis on the `=` operator, the models in rails console might get out of sync.
+You can tell rails console to refresh from the db by using
+```
+edit.editor(true)
+```
