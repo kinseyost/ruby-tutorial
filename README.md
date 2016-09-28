@@ -213,6 +213,10 @@ to models and the database through `rails console`
 ```
 rails console
 ```
+Or for short
+```
+rails c
+```
 To specify enironment:
 ```
 rails console c9
