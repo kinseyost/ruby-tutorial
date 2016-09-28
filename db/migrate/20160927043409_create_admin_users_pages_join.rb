@@ -5,6 +5,7 @@ class CreateAdminUsersPagesJoin < ActiveRecord::Migration[5.0]
       t.integer "admin_user_id"
       t.integer "page_id"
     end
+    # You can add multiple indexes at the same time
     add_index :admin_users_pages, ["admin_user_id", "page_id"]
   end
 
