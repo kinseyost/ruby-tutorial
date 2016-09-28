@@ -2,11 +2,9 @@ class CreateAdminUsersPagesJoin < ActiveRecord::Migration[5.0]
 
   def up
     create_table :admin_users_pages, :id => false do |t| # Remove the primary key **Very important
-      t.integer "admin_user_id"
-      t.integer "page_id"
+      t.refereneces :page
+      t.refereneces :admin_user
     end
-    # You can add multiple indexes at the same time
-    add_index :admin_users_pages, ["admin_user_id", "page_id"]
   end
 
   def down
