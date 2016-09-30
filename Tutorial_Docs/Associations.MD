@@ -105,3 +105,22 @@ You can tell rails console to refresh from the db by using
 ```
 edit.editor(true)
 ```
+
+## has_many :through
+Whereas a HABTM association can access the association in the table that it is related to, 
+a rich many-to-many association must use `has_many :through`.
+
+In your model, add the join table that you want to go through 
+to get the corresponding association.
+
+``` rb
+# admin_users.rb
+  has_many :sections, :through => :section_edits
+```
+On both sides of the association
+``` rb
+# section.rb
+  has_many :editors, :through => :section_edits, :class_name => "AdminUser"
+```
+
+
