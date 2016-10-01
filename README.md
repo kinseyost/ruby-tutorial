@@ -222,3 +222,7 @@ To specify enironment:
 rails console c9
 ```
 For more info, check out [Rails Console]('./Tutorial_Docs/Rails_Console.MD').
+
+
+## Controllers and CRUD
+Controllers and crud information can be found [here](../Tutorial_Docs/controllerCRUD.MD).
