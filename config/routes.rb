@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  get 'subjects/index'
+  # For now we are just going to rely on the default router.
+  # get 'subjects/index'
 
-  get 'subjects/show'
+  # get 'subjects/show'
 
-  get 'subjects/new'
+  # get 'subjects/new'
 
-  get 'subjects/edit'
+  # get 'subjects/edit'
 
-  get 'subjects/delete'
+  # get 'subjects/delete'
 
   # Default route
   root "demo#index"
